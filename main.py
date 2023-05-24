@@ -17,6 +17,11 @@ def get_os_name():
     """ 운영체제 이름을 반환 """
     return platform_name
 
+@eel.expose
+def get_host_name():
+    """ 호스트 이름을 반환 """
+    return platform.node()
+
 
 @eel.expose
 def get_ram_size_mb():
@@ -106,6 +111,17 @@ def get_used_disk():
     _, used, _ = shutil.disk_usage("/")
     return float("%.2f" %(used / 1024 **3))
 
+
+@eel.expose
+def get_process_list():
+    ps = []
+    for i in psutil.process_iter():
+        try:
+            ps.append([i.pid, i.status(), i.name()])
+        except:
+            pass
+    return ps
+
 if __name__ == "__main__":
     program_name = "Status"
     version = "1.0"
@@ -126,8 +142,6 @@ if __name__ == "__main__":
     elif platform_sys == "Linux":
         platform_name = "Linux"
         platform_image_name = "Tux.svg"
-
-    model_name = platform.node()
 
     default_port = 8000
 

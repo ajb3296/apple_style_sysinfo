@@ -18,7 +18,7 @@ async function ram() {
         data: {
             labels: ['', '', '', '', '', '', '', '' ,'' ,''],
             datasets: [{
-                label: 'RAM',
+                label: 'RAM(GB)',
                 borderCapStyle: 'round',
                 data: data_list,
                 fill: true,

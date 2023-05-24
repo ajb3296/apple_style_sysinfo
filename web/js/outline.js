@@ -16,6 +16,7 @@ async function outline() {
     let memory_mb = await eel.get_ram_size_mb()();
     let ip = await eel.get_ip_address()();
     let mac = await eel.get_mac_address()();
+    let hostname = await eel.get_host_name()();
 
     info_main.innerHTML = ''+
         '<div class="icon_box">'+
@@ -30,5 +31,6 @@ async function outline() {
         '    <a>메모리&nbsp;&nbsp;' + memory_mb + 'MB</a><br>'+
         '    <a>IP&nbsp;&nbsp;' + ip + '</a><br>'+
         '    <a>MAC&nbsp;&nbsp;' + mac + '</a><br>'+
+        '    <a>Hostname&nbsp;&nbsp;' + hostname + '</a><br>'+
         '</div>';
 }

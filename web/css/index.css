@@ -121,3 +121,14 @@
     width: 94%;
     height: 80%;
 }
+
+.table_box {
+    margin-top: 10px;
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+}
+
+.ps_table {
+    width: 100%;
+}

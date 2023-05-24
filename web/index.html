@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Status</title>
+
+        <link rel="stylesheet" href="/css/index.css" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+        
+        <script type="text/javascript" src="/eel.js"></script>
+        <script src="/js/outline.js"></script>
+        <script src="/js/cpu.js"></script>
+        <script src="/js/ram.js"></script>
+    </head>
+    <body>
+        <div class="main_div">
+            <div class="main_box">
+                <!-- 상단바 -->
+                <div class="up_bar">
+                    <div class="circle_box">
+                        <div class="red circle"></div>
+                        <div class="orange circle"></div>
+                        <div class="green circle"></div>
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_item menu_left_item" onclick="outline()">
+                            <a>개요</a>
+                        </div>
+                        <div class="menu_item white" onclick="cpu()">
+                            <a>CPU</a>
+                        </div>
+                        <div class="menu_item white" onclick="ram()">
+                            <a>메모리</a>
+                        </div>
+                        <div class="menu_item white">
+                            <a>디스크</a>
+                        </div>
+                        <div class="menu_item menu_right_item white">
+                            <a>프로세스</a>
+                        </div>
+                    </div>
+
+                    <div style="width: 70px; height:10px"></div>
+                </div>
+                
+                <div class="info_main">
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>outline()</script>
+</html>

@@ -1,5 +1,4 @@
 eel
 getmac
 psutil
-shutil
 platform

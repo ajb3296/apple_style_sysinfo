@@ -3,6 +3,7 @@ import eel.browsers
 
 import getmac
 import psutil
+import shutil
 import socket
 import platform
 import subprocess
@@ -26,6 +27,11 @@ def get_ram_size_mb():
 def get_ram_size_gb():
     """ 램 총 용량을 GB 단위로 반환 """
     return "%.2f" %(psutil.virtual_memory().total / 1024 **3)
+
+@eel.expose
+def get_used_ram_gb():
+    """ 램 사용량을 GB 단위로 반환 """
+    return float("%.2f" %(psutil.virtual_memory().used / 1024 **3))
 
 
 @eel.expose
@@ -86,6 +92,19 @@ def get_ip_address():
 def get_mac_address():
     """ MAC 주소를 반환 """
     return getmac.get_mac_address()
+
+
+@eel.expose
+def get_disk_size():
+    """ 디스크 총 용량을 GB 단위로 반환 """
+    total, _, _ = shutil.disk_usage("/")
+    return float("%.2f" %(total / 1024 **3))
+
+@eel.expose
+def get_used_disk():
+    """ 디스크 사용량을 GB 단위로 반환 """
+    _, used, _ = shutil.disk_usage("/")
+    return float("%.2f" %(used / 1024 **3))
 
 if __name__ == "__main__":
     program_name = "Status"

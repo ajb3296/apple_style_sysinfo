@@ -9,10 +9,10 @@ async function ram() {
 
     let max_ram = await eel.get_ram_size_gb()();
 
-    info_main.innerHTML = '<div class="chart"><canvas id="chart"></canvas></div>';
+    info_main.innerHTML = '<div class="chart"><canvas id="ramchart"></canvas></div>';
 
     let data_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let ctx = document.getElementById('chart').getContext('2d');
+    let ctx = document.getElementById('ramchart').getContext('2d');
     let ch = new Chart(ctx, {
         type: 'line',
         data: {
@@ -21,6 +21,7 @@ async function ram() {
                 label: 'RAM',
                 borderCapStyle: 'round',
                 data: data_list,
+                fill: true,
                 borderWidth: 1
             }]
         },
@@ -37,19 +38,19 @@ async function ram() {
         }
     });
 
-    ram_chart([0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ch);
+    ram_chart(data_list, ch);
 }
 
 async function ram_chart(data_list, ch) {
     let timer = ms => new Promise(res => setTimeout(res, ms))
     while (true) {
-        if (document.getElementById("chart") == null) {
+        if (document.getElementById("ramchart") == null) {
             break;
         }
         // 마지막 값 제거
         data_list.shift();
         // 새로운 값 추가
-        data_list.push(await eel.get_cpu_percent()());
+        data_list.push(await eel.get_used_ram_gb()());
 
         ch.data.datasets[0].data = data_list;
         ch.update();

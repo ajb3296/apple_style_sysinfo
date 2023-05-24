@@ -19,6 +19,7 @@ async function cpu() {
                 label: 'CPU(%)',
                 borderCapStyle: 'round',
                 data: data_list,
+                fill: true,
                 borderWidth: 1
             }]
         },
@@ -35,7 +36,7 @@ async function cpu() {
         }
     });
 
-    cpu_chart([0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ch);
+    cpu_chart(data_list, ch);
 }
 
 async function cpu_chart(data_list, ch) {

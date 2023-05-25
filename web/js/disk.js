@@ -12,12 +12,12 @@ async function disk() {
 
     info_main.innerHTML = '<div class="chart"><canvas id="diskchart"></canvas></div>';
 
-    let data_list = [(max_disk - used_disk).toFixed(2), used_disk.toFixed(2)];
+    let data_list = [used_disk.toFixed(2), (max_disk - used_disk).toFixed(2)];
     let ctx = document.getElementById('diskchart').getContext('2d');
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Remain ' + (max_disk - used_disk).toFixed(2) + 'GB', 'Used ' + used_disk.toFixed(2) + 'GB'],
+            labels: ['Used ' + used_disk.toFixed(2) + 'GB', 'Remain ' + (max_disk - used_disk).toFixed(2) + 'GB'],
             datasets: [{
                 label: 'Disk',
                 borderCapStyle: 'round',

@@ -1,3 +1,4 @@
 eel
 getmac
 psutil
+py-cpuinfo

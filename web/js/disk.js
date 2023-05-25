@@ -22,13 +22,10 @@ async function disk() {
                 label: 'Disk',
                 borderCapStyle: 'round',
                 data: data_list,
-                borderWidth: 1
+                borderWidth: 1,
             }]
         },
         options: {
-            animation: {
-                duration: 0
-            },
             scales: {
                 y: {
                     min: 0,

@@ -7,7 +7,7 @@ async function cpu() {
     document.getElementsByClassName("menu_item")[3].classList.remove("f1f1f1");
     document.getElementsByClassName("menu_item")[4].classList.remove("f1f1f1");
 
-    info_main.innerHTML = '<div class="chart"><canvas id="chart"></canvas></div>';
+    info_main.innerHTML = '<div class="chart"><canvas id="chart" style="width: 94%; height: calc(100% - 100px);""></canvas></div>';
 
     let data_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let ctx = document.getElementById('chart').getContext('2d');
@@ -20,13 +20,14 @@ async function cpu() {
                 borderCapStyle: 'round',
                 data: data_list,
                 fill: true,
-                borderWidth: 1
+                borderWidth: 1,
+                cubicInterpolationMode: 'monotone'
             }]
         },
         options: {
-            animation: {
-                duration: 0
-            },
+            interaction: {
+                intersect: false,
+              },
             scales: {
                 y: {
                     min: 0,
@@ -47,6 +48,7 @@ async function cpu_chart(data_list, ch) {
         }
         // 마지막 값 제거
         data_list.shift();
+
         // 새로운 값 추가
         data_list.push(await eel.get_cpu_percent()());
 

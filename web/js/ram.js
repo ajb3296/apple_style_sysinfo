@@ -22,13 +22,12 @@ async function ram() {
                 borderCapStyle: 'round',
                 data: data_list,
                 fill: true,
-                borderWidth: 1
+                borderWidth: 1,
+                cubicInterpolationMode: 'monotone'
             }]
         },
         options: {
-            animation: {
-                duration: 0
-            },
+
             scales: {
                 y: {
                     min: 0,

@@ -5,6 +5,7 @@ import getmac
 import psutil
 import shutil
 import socket
+import cpuinfo
 import platform
 import subprocess
 
@@ -59,14 +60,7 @@ def get_architecture():
 @eel.expose
 def get_processor():
     """ CPU 이름을 반환 """
-    if platform.system() == "Windows":
-        return platform.processor()
-    elif platform.system() == "Darwin":
-        return subprocess.check_output(['/usr/sbin/sysctl', "-n", "machdep.cpu.brand_string"]).strip().decode('utf-8')
-    elif platform.system() == "Linux":
-        command = "cat /proc/cpuinfo"
-        return subprocess.check_output(command, shell=True).strip().decode('utf-8')
-    return ""
+    return cpuinfo.get_cpu_info()["brand_raw"]
 
 @eel.expose
 def get_cpu_core():

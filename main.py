@@ -1,6 +1,7 @@
 import eel
 import eel.browsers
 
+import sys
 import getmac
 import psutil
 import shutil
@@ -119,6 +120,15 @@ def get_process_list():
         except:
             pass
     return ps
+
+
+
+
+
+@eel.expose
+def exit():
+    """ 프로그램 종료 """
+    sys.exit()
 
 if __name__ == "__main__":
     program_name = "Status"

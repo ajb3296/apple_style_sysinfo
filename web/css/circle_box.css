@@ -1,0 +1,38 @@
+.circle_box {
+    padding: 20px;
+    width: 49px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.circle_box:hover {
+    .circle_icon {
+        opacity: 0.5;
+    }
+}
+.circle {
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.red {
+    background-color: #ed695e;
+}
+.orange {
+    background-color: #f4be4e;
+}
+.green {
+    background-color: #61c555;
+}
+
+.circle_icon {
+    opacity: 0;
+    font-size: 11px;
+
+    cursor: default;
+}

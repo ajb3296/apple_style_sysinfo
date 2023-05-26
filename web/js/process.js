@@ -7,8 +7,8 @@ async function process() {
     document.getElementsByClassName("menu_item")[3].classList.remove("f1f1f1");
     document.getElementsByClassName("menu_item")[4].classList.add("f1f1f1");
 
-    make_html = '<div class="table_box"><table class="ps_table" align="center">'+
-        '<tr align="center">'+
+    make_html = '<div class="table_box"><table class="ps_table" align="left">'+
+        '<tr align="left">'+
         '<th>PID</th>'+
         '<th>Status</th>'+
         '<th>Process Name</th>'
@@ -16,7 +16,7 @@ async function process() {
     
     let process_list = await eel.get_process_list()();
     for (let i of process_list) {
-        make_html += '<tr align="center">'+
+        make_html += '<tr align="left">'+
             '<td>' + i[0] + '</td>'+
             '<td>' + i[1] + '</td>'+
             '<td>' + i[2] + '</td>'+

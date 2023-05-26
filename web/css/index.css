@@ -10,7 +10,7 @@
 .main_box {
     width: 70%;
     height: 70%;
-    border-radius: 30px;
+    border-radius: 15px;
 
     background-color: #f1f1f1;
 }
@@ -21,30 +21,7 @@
     background-color: white;
 
     border: 1px solid #f1f1f1;
-    border-radius: 30px 30px 0 0;
-}
-
-.circle_box {
-    padding: 20px;
-    width: 49px;
-
-    display: flex;
-    justify-content: space-between;
-}
-.circle {
-    width: 13px;
-    height: 13px;
-
-    border-radius: 50%;
-}
-.red {
-    background-color: #ed695e;
-}
-.orange {
-    background-color: #f4be4e;
-}
-.green {
-    background-color: #61c555;
+    border-radius: 15px 15px 0 0;
 }
 
 .menu_box {
@@ -129,8 +106,11 @@
 
 .table_box {
     margin-top: 10px;
-    width: 100%;
+    margin-left: 20px;
+
+    width: calc(95% - 20px);
     height: calc(100% - 76px);
+
     overflow: scroll;
 }
 

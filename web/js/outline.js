@@ -23,14 +23,16 @@ async function outline() {
         '    <img class="icon_img" src="/img/' + os_image + '">'+
         '</div>'+
         '<div class="info_box">'+
-        '    <h1 class="os_name">' + os_name + '</h1>'+
-        '    <a>버전 ' + os_version + '</a>'+
-        '    <br>'+
-        '    <br>'+
-        '    <a>프로세서&nbsp;&nbsp;' + processor_clock + ' GHz ' + processor_core + '코어 ' + processor_name + '(arm64) </a><br>'+
-        '    <a>메모리&nbsp;&nbsp;' + memory_mb + 'MB</a><br>'+
-        '    <a>IP&nbsp;&nbsp;' + ip + '</a><br>'+
-        '    <a>MAC&nbsp;&nbsp;' + mac + '</a><br>'+
-        '    <a>Hostname&nbsp;&nbsp;' + hostname + '</a><br>'+
+        '   <div">'+
+        '       <h1 class="os_name">' + os_name + '</h1>'+
+        '       <a>버전 ' + os_version + '</a>'+
+        '       <br>'+
+        '       <br>'+
+        '       <a>프로세서&nbsp;&nbsp;' + processor_clock + ' GHz ' + processor_core + '코어 ' + processor_name + '(arm64) </a><br>'+
+        '       <a>메모리&nbsp;&nbsp;' + memory_mb + 'MB</a><br>'+
+        '       <a>IP&nbsp;&nbsp;' + ip + '</a><br>'+
+        '       <a>MAC&nbsp;&nbsp;' + mac + '</a><br>'+
+        '       <a>Hostname&nbsp;&nbsp;' + hostname + '</a><br>'+
+        '   </div>'+
         '</div>';
 }

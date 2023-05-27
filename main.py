@@ -10,6 +10,7 @@ import cpuinfo
 import platform
 import subprocess
 
+from modules.macver import macver_name, macver_image
 
 eel.init('web')
 
@@ -17,6 +18,10 @@ eel.init('web')
 @eel.expose
 def get_os_name():
     """ 운영체제 이름을 반환 """
+    if platform_name == macos_name:
+        return platform_name + " " + macver_name()
+    elif platform_name == "Linux":
+        ...
     return platform_name
 
 @eel.expose
@@ -113,6 +118,7 @@ def get_used_disk():
 
 @eel.expose
 def get_process_list():
+    """ 프로세스 목록을 반환 """
     ps = []
     for i in psutil.process_iter():
         try:
@@ -145,7 +151,7 @@ if __name__ == "__main__":
 
     elif platform_sys == "Darwin":
         platform_name = macos_name
-        platform_image_name = "Apple_logo_black.svg"
+        platform_image_name = macver_image()
 
     elif platform_sys == "Linux":
         platform_name = "Linux"
@@ -154,4 +160,4 @@ if __name__ == "__main__":
     default_port = 8000
 
     # Set electron
-    eel.start("index.html", mode='chrome', suppress_error=True)
+    eel.start("index.html", mode='chrome', suppress_error=True, port=default_port)

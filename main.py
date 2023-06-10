@@ -20,8 +20,8 @@ def get_os_name():
     """ 운영체제 이름을 반환 """
     if platform_name == macos_name:
         return platform_name + " " + macver_name()
-    elif platform_name == "Linux":
-        ...
+    # elif platform_name == "Linux":
+        # ...
     return platform_name
 
 @eel.expose

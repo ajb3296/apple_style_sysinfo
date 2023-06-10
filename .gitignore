@@ -3,3 +3,4 @@ electron
 node_modules
 .DS_Store
 __pychache__
+*.pyc

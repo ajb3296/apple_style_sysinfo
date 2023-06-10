@@ -5,7 +5,10 @@ def macver():
     version_num = platform.mac_ver()[0].split('.')
 
     platform_image = "Apple_logo.svg"
-    if version_num[0] == "13":
+    if version_num[0] == "14":
+        version_name = "Sonoma"
+
+    elif version_num[0] == "13":
         version_name = "Ventura"
         platform_image = "ventura.png"
 
